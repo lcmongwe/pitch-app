@@ -29,7 +29,7 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
-    from views import views
+    from .views import views
     from .auth import auth
 
     app.register_blueprint(views,url_prefix='/')
