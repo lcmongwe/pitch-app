@@ -1,8 +1,8 @@
 # from email.policy import default
 # from enum import unique
-# from . import db
-# from flask_login import UserMixin
-# from sqlalchemy.sql import func
+from . import db
+from flask_login import UserMixin
+from sqlalchemy.sql import func
 
 # class Note(db.Model):
 #     __tablename__ = 'note'
@@ -16,14 +16,14 @@
 #     # def __repr__(self):
 #     #     return f'Note {self.username}'
 
-# class User(db.Model,UserMixin):
-#     __tablename__ = 'user'
+class User(db.Model,UserMixin):
+    __tablename__ = 'user'
 
-#     id = db.Column(db.Integer,primary_key = True)
-#     email = db.Column(db.String(255), unique=True)
-#     password = db.Column(db.String(255))
-#     first_name = db.Column(db.String(255))
-#     notes = db.relatioship('Note')
+    id = db.Column(db.Integer,primary_key = True)
+    email = db.Column(db.String(255), unique=True)
+    password = db.Column(db.String(255))
+    first_name = db.Column(db.String(255))
+    # notes = db.relatioship('Note')
 
 
 #     # def __repr__(self):
