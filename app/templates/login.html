@@ -3,13 +3,18 @@
 {% block title%}
  log in
 {%endblock%}
+{% block styles%}
 
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+{% endblock %}
 
 {%block content%}
-<form method="POST">
-  <h3 >Log in</h3>
-  <div class="form-group">
-    <label for="email"> email address</label>
+<form method="POST" id="formy">
+  <h3 align="center" >Log in</h3>
+  <div class="form-group group">
+    <label for="email" id="first"> email address</label>
     <input
       type="email"
       class="form-control"
@@ -29,6 +34,6 @@
     />
   
   <br>
-  <button type="submit" class="btn btn-primary"> LOGIN</button>
+  <button type="submit" class="btn btn-primary" id="submit"> LOGIN</button>
 </form>
 {% endblock%}

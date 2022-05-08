@@ -1,0 +1,29 @@
+/* login.html */
+
+#note{
+    width: 60%;
+    height: 30%;
+    margin-left: 20%;
+}
+
+/* sign_up.html */
+#formy{
+    background-color: aquamarine;
+    margin-top: 10%;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.group input{
+    width: 50%;
+    margin-left: 25%;
+    
+}
+
+.group label{
+    margin-left: 45%;
+}
+
+#submit{
+    margin-left: 45%;
+}
