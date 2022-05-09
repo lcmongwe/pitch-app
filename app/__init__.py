@@ -12,7 +12,7 @@ db = SQLAlchemy()
 # login_manager.session_protection = 'strong'
 # login_manager.login_view = 'auth.login'
 
-def create_app(config_name):
+def create_app():
     app = Flask(__name__)
     
     # Creating the app configurations
