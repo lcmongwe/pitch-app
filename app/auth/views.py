@@ -12,7 +12,7 @@ from ..email import mail_message
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("main.home"))
+    return redirect(url_for("main.index"))
 
 @auth.route('/sign_up',methods = ["GET","POST"])
 def register():

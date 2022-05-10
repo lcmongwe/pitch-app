@@ -19,6 +19,9 @@ title%} HOME {% endblock%} {% block styles%} {{ super() }}
       <div class="card card1">
         <div class="card-body">Motivational</div>
       </div>
+      <div class="noteform">
+        {{wtf.quick_form(pitch_form)}}
+      </div>
     </div>
 
     <div class="col-md-10">
