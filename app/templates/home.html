@@ -1,22 +1,33 @@
-{% extends "base.html"%} {% block title%} HOME {% endblock%} {% block styles%}
-{{ super() }}
+{% extends "base.html"%} {% import 'bootstrap/wtf.html' as wtf%} {% block
+title%} HOME {% endblock%} {% block styles%} {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
 
 {% endblock %} {% block content %}
-<div class="home">
-<div class="container">
-  <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      
-      {{wtf.quick_form(login_form)}}
-      <p>
-        Don't have an account?
-        <a href="{{url_for('auth.sign_up')}}">Sign up here</a>
-      </p>
+<div class="home1">
+  <div class="row row1">
+    <div class="col-md-2 colum1">
+      <div class="card card1">
+        <div class="card-body">Memes</div>
+      </div>
+      <div class="card card1">
+        <div class="card-body">Food For Thought</div>
+      </div>
+      <div class="card card1">
+        <div class="card-body">Religious</div>
+      </div>
+
+      <div class="card card1">
+        <div class="card-body">Motivational</div>
+      </div>
     </div>
-    <div clas="col-md-2"></div>
+
+    <div class="col-md-10">
+      <h1 align="center">
+        Are you up to the challenge?<br />
+        share your pitches with us!
+      </h1>
+    </div>
   </div>
 </div>
-</div>
+
 {% endblock%}
