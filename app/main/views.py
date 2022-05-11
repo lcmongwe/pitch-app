@@ -14,6 +14,17 @@ from flask.views import View,MethodView
 # Views
 @main.route('/', methods = ['GET','POST'])
 def index():
+    form = PitchForm()
+    my_upvotes = Upvote.query.filter_by(pitch_id = Pitch.id)
+    if form.validate_on_submit():
+        description = form.description.data
+        title = form.title.data
+        owner_id = current_user
+        category = form.category.data
+        print(current_user._get_current_object().id)
+        new_pitch = Pitch(owner_id =current_user._get_current_object().id, title = title,description=description,category=category)
+        db.session.add(new_pitch)
+        db.session.commit()
 
     '''
     View root page function that returns the index page and its data
@@ -29,7 +40,7 @@ def index():
     
 
     return render_template('home.html', title = title, pitch = pitch, memes
-    =memes, thought= thought, religious = religious, motivational = motivational, upvotes=upvotes)
+    =memes, thought= thought, religious = religious, motivational = motivational, upvotes=upvotes,form=form)
     
 
 
@@ -38,13 +49,13 @@ def index():
 @main.route('/pitches/new/', methods = ['GET','POST'])
 @login_required
 def new_pitch():
-    pitch_form = PitchForm()
+    form = PitchForm()
     my_upvotes = Upvote.query.filter_by(pitch_id = Pitch.id)
-    if pitch_form.validate_on_submit():
-        description = pitch_form.description.data
-        title = pitch_form.title.data
+    if form.validate_on_submit():
+        description = form.description.data
+        title = form.title.data
         owner_id = current_user
-        category = pitch_form.category.data
+        category = form.category.data
         print(current_user._get_current_object().id)
         new_pitch = Pitch(owner_id =current_user._get_current_object().id, title = title,description=description,category=category)
         db.session.add(new_pitch)
@@ -52,7 +63,7 @@ def new_pitch():
         
         
         return redirect(url_for('main.index'))
-    return render_template('pitches.html',pitch_form=pitch_form)
+    return render_template('pitches.html',form=form)
 
 
 
