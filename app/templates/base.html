@@ -16,23 +16,29 @@
     <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
 
     {% endblock %}
+    <script src="https://kit.fontawesome.com/4b22a001a1.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <nav class="navbar1">
       <div class="class1" id="navbar">
         <div class="items">
+               <i class="fa-solid fa-circle-user fa-2x"></i>
           <a class="item" id=" logout" href="{{url_for('auth.logout')}}"
             >Log Out</a
           >
+        
           <a class="item" id=" home" href="/">Home</a>
 
           <a class="item" id=" login" href="{{url_for('auth.login')}}">Login</a>
           <a class="item" id=" signUp" href="{{url_for('auth.register')}}"
             >sign Up</a
           >
+        
         </div>
       </div>
+     
     </nav>
+    
 
     {%block content%} {%endblock%}
 
