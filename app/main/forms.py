@@ -6,7 +6,7 @@ from wtforms.validators import InputRequired
 class PitchForm(FlaskForm):
 	title = StringField('Title', validators=[InputRequired()])
 	description = TextAreaField("write your pitch here",validators=[InputRequired()])
-	category = SelectField('categories', choices=[ ('memes','memes'), ('thought','thought'),('religious','religious'),('motivational','motivational')],validators=[InputRequired()])
+	category = SelectField('select category', choices=[ ('memes','memes'), ('thought','thought'),('religious','religious'),('motivational','motivational')],validators=[InputRequired()])
 	submit = SubmitField('Submit')
 
 # class PitchForm(FlaskForm):
