@@ -49,6 +49,7 @@ def index():
 @main.route('/pitches/new/', methods = ['GET','POST'])
 @login_required
 def new_pitch():
+    user = current_user
     form = PitchForm()
     my_upvotes = Upvote.query.filter_by(pitch_id = Pitch.id)
     if form.validate_on_submit():
@@ -63,7 +64,7 @@ def new_pitch():
         
         
         return redirect(url_for('main.index'))
-    return render_template('pitches.html',form=form)
+    return render_template('pitches.html',form=form,user=user)
 
 
 

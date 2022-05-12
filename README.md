@@ -10,6 +10,12 @@ Pitches-App
 
 This is a simple Flask program that allows a user to read various pitches from different users. The user can be able write their own piches and post them for others to like or dislike.  
 
+### :pushpin:USER STORIES
+- A user can see the pitches posted by other people
+- A user can eithr downvote or upvote on a pitch as long as they are signed in.
+- A user can add comment on the different pitches .
+- A user can view and submit pitches by category.
+
 ### :pushpin:PROJECT SETUP INSTRUCTIONS
 
 - Open terminal {Ctrl +Alt + T}
@@ -22,10 +28,14 @@ This is a simple Flask program that allows a user to read various pitches from d
 ### :computer: TECHNOLOGIES USED
 
 - PYTHON
-- HTML
-- CSS
-- BOOTSRAP
+- HTML,CSS and Bootstrap
+- Flask Framework
+- Postrgressql
 - MARKDOWN
+- Heroku
+
+### :pushpin: KNOWN BUGS
+No known bugs so far
 
 ### :telephone_receiver: CONTACT INFORMATION
 
