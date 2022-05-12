@@ -2,7 +2,7 @@ from unicodedata import category
 from flask import render_template,request,redirect,url_for,abort,flash
 from . import main
 
-from ..models import Pitch, User,Comment,Upvote,Downvote
+from ..models import  Pitch, User,Comment,Upvote,Downvote
 from .forms import PitchForm, CommentForm, UpvoteForm
 from flask_login import login_required,current_user
 from .. import db
@@ -125,14 +125,15 @@ def downvote(pitch_id):
     return redirect(url_for('main.index'))
 
 
-@main.route('/user/<uname>')
-def profile(uname):
-    user = User.query.filter_by(username = uname).first()
+# @main.route('/user/<uname>')
+# def profile(uname):
+#     user = User.query.filter_by(username = uname).first()
 
-    if user is None:
-        abort(404)
+#     if user is None:
+#         abort(404)
 
-    return render_template("profile/profile.html", user = user)
+    
+#     return render_template("profile/profile.html", user = user)
 
 
 # Views
