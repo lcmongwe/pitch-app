@@ -4,7 +4,7 @@ Pitches-App
 
 ## SCREENSHOT
 
-<!-- ![PITCHES-APP](/app/static/images/screen.png) -->
+![PITCHES-APP](/app/static/images/pitchscreenshot.png)
 
 ### :bulb: PROJECT DESCRIPTION
 
